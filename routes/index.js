@@ -25,6 +25,7 @@ router.get('/test', function(req, res, next) {
 
 router.post('/testapi', function(req, res, next) {
 	console.log('test post', req.body);
+	res.send("{'ok': 'cool'");
 });
 
 router.post('/api/photo',function(req,res){
