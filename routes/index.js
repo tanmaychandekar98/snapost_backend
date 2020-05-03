@@ -2,6 +2,7 @@ const express = require('express');
 const multer  =   require('multer');
 const path = require('path');
 const router = express.Router();
+const fs = require('fs');
 
 const storage =   multer.diskStorage({
   destination: function (req, file, callback) {
@@ -16,19 +17,16 @@ const upload = multer({ storage : storage}).any('selectedImage');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.sendfile('./index.html')
+  res.sendfile('./index.html');
 });
 
-router.get('/test', function(req, res, next) {
-	res.send('okokokk')
+router.get('/api/images', function(req, res, next) {
+	files = fs.readdirSync('data/uploads');
+  console.log(files);
+  res.json(files);
 });
 
-router.post('/testapi', function(req, res, next) {
-	console.log('test post', req.body);
-	res.send("{'ok': 'cool'");
-});
-
-router.post('/api/photo',function(req,res){
+router.post('/api/photo/upload',function(req,res){
 	 console.log(req.body)
     upload(req,res,function(err) {
         if(err) {
