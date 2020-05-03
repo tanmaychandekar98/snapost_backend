@@ -23,6 +23,10 @@ router.get('/test', function(req, res, next) {
 	res.send('okokokk')
 });
 
+router.post('/testapi', function(req, res, next) {
+	console.log('test post', req.body);
+});
+
 router.post('/api/photo',function(req,res){
 	 console.log(req.body)
     upload(req,res,function(err) {
