@@ -23,7 +23,7 @@ router.get('/', function(req, res, next) {
 router.get('/api/images', function(req, res, next) {
 	files = fs.readdirSync('data/uploads');
   console.log(files);
-  res.send(files);
+  res.json({ imgUrls : files});
 });
 
 router.post('/api/photo/upload',function(req,res){
