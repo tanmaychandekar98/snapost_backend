@@ -19,7 +19,9 @@ router.get('/', function(req, res, next) {
   res.sendfile('./index.html')
 });
 
-
+router.get('/test', function(req, res, next) {
+	res.send('okokokk')
+});
 
 router.post('/api/photo',function(req,res){
 	 console.log(req.body)
