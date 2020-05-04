@@ -35,7 +35,7 @@ router.get('/', function(req, res, next) {
 router.get('/images/urls', function(req, res, next) {
 	console.log('Request received for image URLs fetch');
 
-	res.json({ imgUrls : Images.map('imgName').value()});
+	res.json({ images : Images.value()});
 });
 
 
@@ -65,11 +65,13 @@ router.post('/image/upload', upload.single("selectedImage"), function(req,res){
 	}
 });
 
+
+// Like request for image
 router.post('/image/like', function (req, res) {
 	console.log('Like recieved by server')
 
 	old_likes = Images.find({ imgName : req.body.imgName }).value().likes
-	console.log(old_likes)
+
 	Images.find({ imgName : req.body.imgName })
 		.assign({ likes : old_likes+1 })
 		.write();
@@ -77,6 +79,8 @@ router.post('/image/like', function (req, res) {
 	res.json({"msg" : "Like added"});
 });
 
+
+// Build image object for db
 function getImageObject(req) {
 	return {
 		imgName : req.file.filename,
