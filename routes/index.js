@@ -38,6 +38,24 @@ router.get('/images/urls', function(req, res, next) {
 	res.json({ images : Images.value()});
 });
 
+router.get('/images/urls/:userId', function(req, res, next) {
+	user_images = []
+	console.log('fetching images for user', req.params.userId);
+
+
+	Users.find({ userId : req.params.userId})
+		.get('images')
+		.value()
+		.forEach(function(imgName) {
+			console.log(imgName);
+			user_images.push(
+				Images.find({ imgName : imgName })
+					.value()
+			);
+		});
+
+		res.json({images: user_images});
+});
 
 // Request for image upload
 router.post('/image/upload', upload.single("selectedImage"), function(req,res){
@@ -70,10 +88,10 @@ router.post('/image/upload', upload.single("selectedImage"), function(req,res){
 router.post('/image/like', function (req, res) {
 	console.log('Like recieved by server')
 
-	old_likes = Images.find({ imgName : req.body.imgName }).value().likes
+	getImage = Images.find({ imgName : req.body.imgName });
+	old_likes = getImage.value().likes
 
-	Images.find({ imgName : req.body.imgName })
-		.assign({ likes : old_likes+1 })
+	getImage.assign({ likes : old_likes+1 })
 		.write();
 
 	res.json({"msg" : "Like added"});
