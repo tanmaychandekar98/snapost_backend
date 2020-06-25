@@ -12,7 +12,12 @@
         "tanmay-selectedImage-1588610171722.jpg",
         "tanmay-selectedImage-1588672359392.jpg",
         "tanmay-selectedImage-1588689110388.jpg",
-        "tanmay-selectedImage-1588692506656.jpg"
+        "tanmay-selectedImage-1588692506656.jpg",
+        "tanmay-selectedImage-1588707100088.jpg",
+        "tanmay-selectedImage-1588707239574.jpg",
+        "tanmay-selectedImage-1588707386413",
+        "tanmay-selectedImage-1588707584168",
+        "tanmay-selectedImage-1588707781771.jpg"
       ]
     }
   ],
@@ -30,7 +35,7 @@
     {
       "imgName": "tanmay-selectedImage-1588605993936.jpg",
       "userId": "tanmay",
-      "likes": 28
+      "likes": 29
     },
     {
       "imgName": "tanmay-selectedImage-1588607232947.jpg",
@@ -66,6 +71,31 @@
       "imgName": "tanmay-selectedImage-1588692506656.jpg",
       "userId": "tanmay",
       "likes": 6
+    },
+    {
+      "imgName": "tanmay-selectedImage-1588707100088.jpg",
+      "userId": "tanmay",
+      "likes": 0
+    },
+    {
+      "imgName": "tanmay-selectedImage-1588707239574.jpg",
+      "userId": "tanmay",
+      "likes": 0
+    },
+    {
+      "imgName": "tanmay-selectedImage-1588707386413",
+      "userId": "tanmay",
+      "likes": 0
+    },
+    {
+      "imgName": "tanmay-selectedImage-1588707584168",
+      "userId": "tanmay",
+      "likes": 6
+    },
+    {
+      "imgName": "tanmay-selectedImage-1588707781771.jpg",
+      "userId": "tanmay",
+      "likes": 0
     }
   ]
 }
